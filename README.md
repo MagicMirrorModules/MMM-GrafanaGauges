@@ -48,7 +48,7 @@ modules: [
 Everything needed is extractable from the <code>url</code> when you're viewing your gauge using grafana in your browser.<br>
 <b>The <code>panelid</code> from each gauges has to be represented within the showIDs-array. Also the order set within this array.</b>
 
-![url provides needed information](https://github.com/SvenSommer/MMM-GrafanaChart/blob/master/url_explainend.png?raw=true)
+![url provides needed information](https://github.com/SvenSommer/MMM-GrafanaGauges/blob/master/url_explainend.png?raw=true)
 ## Optional configuration options
 
 The following properties can be configured:
