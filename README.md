@@ -32,15 +32,17 @@ modules: [
 		 position: 'top_right',   // This can be any of the regions.
          header: 'Olive tree',
 		 config: {
-					host: "grafana_host", //Mandatory. See url when displaying within grafana
-					port: 3000, // Mandatory.
-					dashboardname: "flowers", // Mandatory.
-					orgId: 1, // Mandatory.
-					showIDs: [12, 8, 9, 10],// Mandatory. PanelId from the url.
-					width: "100%", // Optional. Default: 100%
-					height: "100%", // Optional. Default: 100%
-					refreshInterval: 900 //Optional. Default: 900 = 1/4 hour
-				}
+		 		version: "6", // Only add this line if you are using Grafana verison 6 or greater
+				id: "as8fA8na", // Only Mandartory if you are using Grafana verison 6 or greater found after /d/ in the url
+				host: "grafana_host", //Mandatory. See url when displaying within grafana
+				port: 3000, // Mandatory.
+				dashboardname: "flowers", // Mandatory.
+				orgId: 1, // Mandatory.
+				showIDs: [12, 8, 9, 10],// Mandatory. PanelId from the url.
+				width: "100%", // Optional. Default: 100%
+				height: "100%", // Optional. Default: 100%
+				refreshInterval: 900 //Optional. Default: 900 = 1/4 hour
+			}
 	},
 ]
 ````
