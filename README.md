@@ -4,7 +4,7 @@ This [MagicMirror²] module allows you to display several gauges in a row genera
 <b>Important Note:</b> This module requires a running grafana installation. To install Grafana, follow the official [installation instructions](http://docs.grafana.org/installation/).
 
 <b>[This blogpost](http://www.robstechlog.com/2017/06/30/personal-weather-chart-module/) describes how to install and use grafana and build a weatherchart.</b><br>
-![example of a grafana weather gauges](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/blob/master/MMM-GrafanaGauges.png?raw=true)
+![example of a grafana weather gauges](https://github.com/SvenSommer/MMM-GrafanaGauges/blob/master/MMM-GrafanaGauges.png?raw=true)
 
 ## Installation of the module
 
@@ -15,7 +15,7 @@ cd ~/MagicMirror/modules
 
 Clone this repository:
 ````
-git clone https://github.com/MagicMirrorModules/MMM-GrafanaGauges
+git clone https://github.com/SvenSommer/MMM-GrafanaGauges
 ````
 
 Configure the module in your `config.js` file.
@@ -32,16 +32,17 @@ modules: [
 		 position: 'top_right',   // This can be any of the regions.
          header: 'Olive tree',
 		 config: {
-					host: "grafana_host", //Mandatory. See url when displaying within grafana
-					port: 3000, // Mandatory.
-					https: false, // Optional. Consider using TLS for your data. Default: false
-					dashboardname: "flowers", // Mandatory.
-					orgId: 1, // Mandatory.
-					showIDs: [12, 8, 9, 10],// Mandatory. PanelId from the url.
-					width: "100%", // Optional. Default: 100%
-					height: "100%", // Optional. Default: 100%
-					refreshInterval: 900 //Optional. Default: 900 = 1/4 hour
-				}
+		 		version: "6", // Only add this line if you are using Grafana verison 6 or greater
+				id: "as8fA8na", // Only Mandartory if you are using Grafana verison 6 or greater found after /d/ in the url
+				host: "grafana_host", //Mandatory. See url when displaying within grafana
+				port: 3000, // Mandatory.
+				dashboardname: "flowers", // Mandatory.
+				orgId: 1, // Mandatory.
+				showIDs: [12, 8, 9, 10],// Mandatory. PanelId from the url.
+				width: "100%", // Optional. Default: 100%
+				height: "100%", // Optional. Default: 100%
+				refreshInterval: 900 //Optional. Default: 900 = 1/4 hour
+			}
 	},
 ]
 ````
