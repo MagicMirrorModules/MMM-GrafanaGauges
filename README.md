@@ -4,7 +4,7 @@ This [MagicMirror²] module allows you to display several gauges in a row genera
 <b>Important Note:</b> This module requires a running grafana installation. To install Grafana, follow the official [installation instructions](http://docs.grafana.org/installation/).
 
 <b>[This blogpost](http://www.robstechlog.com/2017/06/30/personal-weather-chart-module/) describes how to install and use grafana and build a weatherchart.</b><br>
-![example of a grafana weather gauges](https://github.com/SvenSommer/MMM-GrafanaGauges/blob/master/MMM-GrafanaGauges.png?raw=true)
+![example of a grafana weather gauges](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/blob/master/MMM-GrafanaGauges.png?raw=true)
 
 ## Installation of the module
 
@@ -15,7 +15,7 @@ cd ~/MagicMirror/modules
 
 Clone this repository:
 ````
-git clone https://github.com/SvenSommer/MMM-GrafanaGauges
+git clone https://github.com/MagicMirrorModules/MMM-GrafanaGauges
 ````
 
 Configure the module in your `config.js` file.
