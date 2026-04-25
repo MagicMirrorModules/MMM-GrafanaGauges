@@ -30,6 +30,10 @@
     "grafana:start": "./scripts/start-grafana-test.sh",
     "grafana:stop": "./scripts/stop-grafana-test.sh",
     "grafana:restart": "node --run grafana:stop && node --run grafana:start",
-    "grafana:status": "docker ps --filter name=mmm-grafana-gauges-test"
+    "grafana:status": "docker ps --filter name=mmm-grafana-gauges-test",
+    "release": "commit-and-tag-version --config ./changelog.config.js"
+  },
+  "devDependencies": {
+    "commit-and-tag-version": "^12.7.1"
   }
 }
