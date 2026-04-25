@@ -19,7 +19,7 @@ let config = {
         https: false,
         dashboardname: 'flowers',
         orgId: 1,
-        showIDs: [8, 9, 10, 12],
+        showIDs: [8, 9, 10, 12, 13],
         width: '220',
         height: '220',
         refreshInterval: 60,
