@@ -1,0 +1,35 @@
+{
+  "name": "mmm-grafanagauges",
+  "version": "1.1.0",
+  "description": "Grafana Gauges module for MagicMirror².",
+  "keywords": [
+    "MagicMirror",
+    "grafana",
+    "gauges"
+  ],
+  "type": "commonjs",
+  "homepage": "https://github.com/MagicMirrorModules/MMM-GrafanaGauges#readme",
+  "bugs": {
+    "url": "https://github.com/MagicMirrorModules/MMM-GrafanaGauges/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MagicMirrorModules/MMM-GrafanaGauges"
+  },
+  "license": "MIT",
+  "author": "Robert Hoffmann",
+  "contributors": [
+    {
+      "name": "Contributors to MagicMirrorModules/MMM-GrafanaGauges",
+      "url": "https://github.com/MagicMirrorModules/MMM-GrafanaGauges/graphs/contributors"
+    }
+  ],
+  "main": "MMM-GrafanaGauges.js",
+  "scripts": {
+    "demo": "cd ../../ && MM_CONFIG_FILE=modules/MMM-GrafanaGauges/demo.config.js node --run start:dev",
+    "grafana:start": "./scripts/start-grafana-test.sh",
+    "grafana:stop": "./scripts/stop-grafana-test.sh",
+    "grafana:restart": "node --run grafana:stop && node --run grafana:start",
+    "grafana:status": "docker ps --filter name=mmm-grafana-gauges-test"
+  }
+}
