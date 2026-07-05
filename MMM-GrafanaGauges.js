@@ -34,7 +34,7 @@ Module.register('MMM-GrafanaGauges', {
 
 		const protocol = this.config.https === true ? 'https://' : 'http://';
 		const version = Number(this.config.version) || 0;
-		let baseUrl;
+		let dashboardPath;
 
 		if (version >= 6) {
 			if (!this.config.id) {
@@ -42,18 +42,27 @@ Module.register('MMM-GrafanaGauges', {
 				return wrapper;
 			}
 
-			baseUrl = protocol + this.config.host + ':' + this.config.port
-				+ '/d-solo/' + this.config.id + '/' + this.config.dashboardname
-				+ '?orgId=' + this.config.orgId + '&fullscreen&kiosk';
+			dashboardPath = '/d-solo/' + encodeURIComponent(String(this.config.id))
+				+ '/' + encodeURIComponent(String(this.config.dashboardname));
 		} else {
-			baseUrl = protocol + this.config.host + ':' + this.config.port + '/dashboard-solo/db/' + this.config.dashboardname + '?orgId=' + this.config.orgId;
+			dashboardPath = '/dashboard-solo/db/' + encodeURIComponent(String(this.config.dashboardname));
 		}
 
-		const hideLogo = this.config.hideLogo ? '&hideLogo=true' : '';
+		const baseUrl = new URL(protocol + this.config.host + ':' + this.config.port + dashboardPath);
+		baseUrl.searchParams.set('orgId', String(this.config.orgId));
+		baseUrl.searchParams.set('fullscreen', '');
+		baseUrl.searchParams.set('kiosk', '');
+
 		if (Array.isArray(this.config.showIDs) && this.config.showIDs.length > 0) {
 			for (let i = 0; i < this.config.showIDs.length; i++) {
+				const iframeUrl = new URL(baseUrl);
+				iframeUrl.searchParams.set('panelId', String(this.config.showIDs[i]));
+				if (this.config.hideLogo) {
+					iframeUrl.searchParams.set('hideLogo', 'true');
+				}
+
 				const iframe = document.createElement('iframe');
-				iframe.src = baseUrl + '&panelId=' + this.config.showIDs[i] + hideLogo;
+				iframe.src = iframeUrl.href;
 				iframe.width = this.config.width;
 				iframe.height = this.config.height;
 				iframe.setAttribute('frameborder', '0');
