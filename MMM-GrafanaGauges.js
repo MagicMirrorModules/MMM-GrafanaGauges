@@ -86,7 +86,7 @@ Module.register('MMM-GrafanaGauges', {
 	},
 
 	scheduleUpdate(delay) {
-		const nextLoad = delay !== undefined && delay >= 0 ? delay * 1000 : this.config.refreshInterval;
+		const nextLoad = (delay !== undefined && delay >= 0 ? delay : this.config.refreshInterval) * 1000;
 		setTimeout(() => {
 			this.updateFrame();
 		}, nextLoad);
