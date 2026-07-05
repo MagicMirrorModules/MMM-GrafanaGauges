@@ -19,4 +19,12 @@ module.exports = [
 			'unicorn/prefer-module': 'off',
 		},
 	},
+	{
+		files: ['test/**/*.js'],
+		rules: {
+			'unicorn/filename-case': 'off',
+			'unicorn/no-global-object-property-assignment': 'off',
+			'unicorn/prefer-module': 'off',
+		},
+	},
 ];
