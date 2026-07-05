@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.3.0](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/compare/v1.2.0...v1.3.0) (2026-07-05)
+
+
+### Added
+
+* add CSS-based layout options and hideLogo option ([#7](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/issues/7)) ([e53f2cf](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/commit/e53f2cfa91607f80d808ba7b8eb679a6d340ea4c))
+
+
+### Fixed
+
+* normalize scheduleUpdate fallback to seconds-based ms conversion ([8c1e005](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/commit/8c1e0050297ba204e046f8d416c96f9a9fe23e6f))
+* replace iframe innerHTML with safe DOM creation ([b93094f](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/commit/b93094ff8ea70b5222111e008bb99b6c46164139))
+* set default width/height to 100% ([f4cd794](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/commit/f4cd7947a717af9944476284c30bc9cb4662fa51))
+
+
+### Documentation
+
+* clarify module works with any Grafana panel type, add bar chart example ([35bc3df](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/commit/35bc3df8fb7fe9c55b0204f2c9c6f0618b56741b))
+
+
+### Chores
+
+* add Dependabot config ([5800dc2](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/commit/5800dc29ea0fc8c8f28835cf5a234b6222cff461))
+* add linting with XO ([15e3f05](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/commit/15e3f057dbd59e45ea56464385c42c2dee4d8d9a))
+* add unit tests ([108f47e](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/commit/108f47e8715428f18731970d1035655bab09a6c3))
+* update devDependencies ([4db2d12](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/commit/4db2d12a115683f2c7cb41c14ac2ab7fa6d7b296))
+
+
+### Code Refactoring
+
+* apply linting rules ([305cef3](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/commit/305cef3a874dddba1590b7286698e884e9f837d6))
+* encode Grafana URL parts with URL API ([02895c9](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/commit/02895c92eeb06be788acaa94c80527a6567b29da))
+
 ## [1.2.0](https://github.com/MagicMirrorModules/MMM-GrafanaGauges/compare/v1.1.0...v1.2.0) (2026-04-25)
 
 
