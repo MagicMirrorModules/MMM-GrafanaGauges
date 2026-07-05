@@ -1,8 +1,8 @@
 Module.register('MMM-GrafanaGauges', {
 	// Default module config.
 	defaults: {
-		height: '100',
-		width: '100',
+		height: '100%',
+		width: '100%',
 		refreshInterval: 900,
 		animationSpeed: 1000,
 		https: false,
