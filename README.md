@@ -67,6 +67,9 @@ The following properties can be configured:
 | `width` | Width of the displayed chart. `'150 px'` or `'50 %'` are valid options. Default value: `"100%"`. |
 | `height` | Height of the displayed chart. `'150 px'` or `'50 %'` are valid options. Default value: `"100%"`. |
 | `refreshInterval` | Update interval of the diagram in seconds. Default value: `900` = 15 \* 60 (four times every hour). |
+| `hideLogo` | Append `hideLogo=true` to each panel URL. Set to `false` to leave it off. Default value: `true`. |
+| `spacing` | Gap between adjacent panels, as a CSS length (e.g. `"10px"`, `"1em"`). Default value: `"0"` (no gap). |
+| `align` | Horizontal alignment of the panels: `"left"`, `"center"`, or `"right"`. Default value: `"left"`. |
 
 ## Development
 

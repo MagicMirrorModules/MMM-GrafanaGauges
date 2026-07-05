@@ -6,7 +6,10 @@ Module.register("MMM-GrafanaGauges", {
         refreshInterval: 900,
         animationSpeed: 1000,
         https: false,
-        version: 0
+        version: 0,
+        hideLogo: true,
+        spacing: "0",
+        align: "left"
     },
 
     // Define start sequence.
@@ -15,9 +18,15 @@ Module.register("MMM-GrafanaGauges", {
         this.scheduleUpdate(this.config.refreshInterval);
     },
 
+	// Define required CSS files.
+	getStyles() {
+		return ['MMM-GrafanaGauges.css']
+	},
+
     // Override dom generator.
     getDom: function() {
         var wrapper = document.createElement("div");
+        wrapper.className = "mmm-grafana-gauges";
         if (!this.config.host) {
             Log.error("MMM-GrafanaGauges: config.host is required");
             return wrapper;
@@ -37,15 +46,24 @@ Module.register("MMM-GrafanaGauges", {
             baseUrl = protocol + this.config.host + ":" + this.config.port + "/dashboard-solo/db/" + this.config.dashboardname + "?orgId=" + this.config.orgId;
         }
 
+        var hideLogo = this.config.hideLogo ? "&hideLogo=true" : "";
         var img = '';
         if (Array.isArray(this.config.showIDs) && this.config.showIDs.length > 0) {
             for (var i = 0; i < this.config.showIDs.length; i++) {
-                img += '<iframe src="' + baseUrl + '&panelId=' + this.config.showIDs[i] + '" width="' + this.config.width + '" height="' + this.config.height + '" frameborder="0" scrolling="no"></iframe>';
+                img += '<iframe src="' + baseUrl + '&panelId=' + this.config.showIDs[i] + hideLogo + '" width="' + this.config.width + '" height="' + this.config.height + '" frameborder="0" scrolling="no"></iframe>';
             }
         } else {
             Log.warn("MMM-GrafanaGauges: config.showIDs is empty or missing");
         }
 
+        var align = this.config.align || "left";
+        if (align !== "left" && align !== "center" && align !== "right") {
+            Log.warn("MMM-GrafanaGauges: invalid config.align value '" + align + "'. Allowed values: left, center, right. Falling back to left.");
+            align = "left";
+        }
+
+        wrapper.classList.add("mmm-grafana-gauges--align-" + align);
+        wrapper.style.setProperty("--mmm-grafana-gauges-gap", this.config.spacing || "0");
         wrapper.innerHTML = img;
         wrapper.setAttribute("timestamp", new Date().getTime());
         return wrapper;

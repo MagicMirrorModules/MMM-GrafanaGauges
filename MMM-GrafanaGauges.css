@@ -1,0 +1,17 @@
+.mmm-grafana-gauges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mmm-grafana-gauges-gap, 0);
+}
+
+.mmm-grafana-gauges--align-left {
+    justify-content: flex-start;
+}
+
+.mmm-grafana-gauges--align-center {
+    justify-content: center;
+}
+
+.mmm-grafana-gauges--align-right {
+    justify-content: flex-end;
+}
