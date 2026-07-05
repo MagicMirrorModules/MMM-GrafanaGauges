@@ -50,12 +50,15 @@ Module.register('MMM-GrafanaGauges', {
 		}
 
 		const hideLogo = this.config.hideLogo ? '&hideLogo=true' : '';
-		let img = '';
 		if (Array.isArray(this.config.showIDs) && this.config.showIDs.length > 0) {
 			for (let i = 0; i < this.config.showIDs.length; i++) {
-				img += '<iframe src="' + baseUrl + '&panelId=' + this.config.showIDs[i]
-					+ hideLogo + '" width="' + this.config.width + '" height="' + this.config.height
-					+ '" frameborder="0" scrolling="no"></iframe>';
+				const iframe = document.createElement('iframe');
+				iframe.src = baseUrl + '&panelId=' + this.config.showIDs[i] + hideLogo;
+				iframe.width = this.config.width;
+				iframe.height = this.config.height;
+				iframe.setAttribute('frameborder', '0');
+				iframe.setAttribute('scrolling', 'no');
+				wrapper.append(iframe);
 			}
 		} else {
 			Log.warn('MMM-GrafanaGauges: config.showIDs is empty or missing');
@@ -69,7 +72,6 @@ Module.register('MMM-GrafanaGauges', {
 
 		wrapper.classList.add('mmm-grafana-gauges--align-' + align);
 		wrapper.style.setProperty('--mmm-grafana-gauges-gap', this.config.spacing || '0');
-		wrapper.innerHTML = img;
 		wrapper.setAttribute('timestamp', Date.now());
 		return wrapper;
 	},
