@@ -40,6 +40,6 @@
   "devDependencies": {
     "commit-and-tag-version": "^13.1.2",
     "jsdom": "^29.1.1",
-    "xo": "^3.0.2"
+    "xo": "^4.0.0"
   }
 }
