@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "commit-and-tag-version": "^13.1.2",
-    "jsdom": "^29.1.1",
+    "jsdom": "^30.0.1",
     "xo": "^4.0.0"
   }
 }
